@@ -1,0 +1,14 @@
+[Unit]
+Description=Kopia Backup Timer (Every 4 hours)
+#Documentation=...
+
+[Timer]
+#OnCalendar=daily
+#AccuracySec=1h
+# see https://leethax.org/2017/11/17/systemd-timers.html
+OnActiveSec=4h
+OnUnitActiveSec=4h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

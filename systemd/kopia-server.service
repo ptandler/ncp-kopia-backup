@@ -1,0 +1,14 @@
+[Unit]
+Description=Kopia Server
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=kopia
+Group=kopia
+ExecStart=/usr/bin/kopia server start --htpasswd-file /home/kopia/kopia_conf/kopia_auth --tls-cert-file /home/kopia/kopia_conf/kopia.cert --tls-key-file /home/kopia/kopia_conf/kopia.key --address 192.168.178.36:51515
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

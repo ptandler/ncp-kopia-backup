@@ -1,0 +1,14 @@
+[Unit]
+Description=Run Kopia Backup
+After=syslog.target network.target mysql.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+# check if full backup is currently running, see https://serverfault.com/a/1016676/368867
+ExecCondition=/bin/bash -xc '! /usr/bin/systemctl is-active --quiet kopia-backup-full.service'
+ExecStart=/home/kopia/kopia-run-backup.sh
+
+#[Install]
+#WantedBy=multi-user.target
