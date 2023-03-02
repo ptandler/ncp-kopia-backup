@@ -1,12 +1,12 @@
 # Regular backup Nextcloud server running with NCP (NextcloudPi) using kopia and Storj cloud storage
 
-Some scripts to backup a nextcloudpi.
+Some scripts to backup your local nextcloud instance running on a Raspberry Pi (or alike) with nextcloudpi.
 
 Using:
 
-- the wonderful [kopia](https://kopia.io/) for backup
+- the wonderful [kopia](https://kopia.io/) for backup (end-to-end encrypted, incremental, de-dup (using hashes and splitting to save only changed parts of large files), compressed, fast!)
 - optional: use [zstd](https://facebook.github.io/zstd/) to compress DB dumps
-- save backup to [Storj](https://www.storj.io/) cloud storage
+- save backup to [Storj](https://www.storj.io/) cloud storage (but you could connect to another kopia repository if you want, of course. *However, Storj currently offers 150 GB for free and is cheaper than all other providers I found. And I like the idea of the distributed approach with* [open source software](https://github.com/Storj/) *and anyone can sign up to host a Storj node. I didn't understand the* [details of erasure codes as redundancy approach](https://docs.storj.io/dcs/concepts/file-redundancy) 🤔, *but it sounds to me like someone really thought in depth about this...* :face_with_peeking_eye:)
 
 ## Usage
 
@@ -37,7 +37,6 @@ In addition to the normal backup, this
 - sets maintenance mode
 - shutdown mysql and snapshot the DB directory (and restart mysql)
 - restore maintenance mode to what is was before
-
 
 ## Sample .env
 

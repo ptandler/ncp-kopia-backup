@@ -1,5 +1,5 @@
 [Unit]
-Description=Kopia Backup Timer (Daily)
+Description=Kopia Full Backup Timer (Daily)
 #Documentation=...
 
 [Timer]
