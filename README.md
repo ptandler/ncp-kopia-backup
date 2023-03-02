@@ -1,4 +1,4 @@
-# Regular NCP backup with kopia to Storj cloud storage
+# Regular backup Nextcloud server running with NCP (NextcloudPi) using kopia and Storj cloud storage
 
 Some scripts to backup a nextcloudpi.
 
